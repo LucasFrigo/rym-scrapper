@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Albums Ranked</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+
+<body>
+
+<h1>Album List</h1>
+<p>The best albums ranked in this genre based on RYM reviews.</p>
+
+<table class="table">
+    <tr>
+        <th>Artista</th>
+        <th>Album</th>
+        <th>URL da capa do album</th>
+    </tr>
+    <tr th:each="albumStat : ${albumStats}">
+        <td th:text="${albumStat.artist}"></td>
+        <td th:text="${albumStat.name}"></td>
+        <td th:text="${albumStat.imgUrl}">0</td>
+    </tr>
+</table>
+
+</body>
+
+</html>
